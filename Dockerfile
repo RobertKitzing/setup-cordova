@@ -8,6 +8,8 @@ RUN apk update && apk upgrade && \
     npm config set unsafe-perm true && \
     npm install -g cordova
 
+ENV JAVA_HOME "/usr/lib/jvm/java-8-openjdk"
+
 COPY entrypoint.sh /usr/src/entrypoint.sh
 
 ENTRYPOINT ["/usr/src/entrypoint.sh"]
